@@ -38,3 +38,4 @@ phases:
 artifacts:
   type: zip
   files: '**/*'
+  
