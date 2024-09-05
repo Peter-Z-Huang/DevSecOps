@@ -1,3 +1,3 @@
 #!/bin/bash
 # Start the Java application
-nohup java -jar /opt/myapp/myapp.jar > /opt/myapp/application.log 2>&1 &
+nohup java -jar app.jar 
