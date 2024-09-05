@@ -1,6 +1,10 @@
 #!/bin/bash
 # Stop the running Java application
-pid=$(pgrep -f 'java -jar app.jar')
-if [ -n "$pid" ]; then
-    kill -9 $pid
+# pid=$(pgrep -f 'java -jar app.jar')
+# if [ -n "$pid" ]; then
+#     kill -9 $pid
+# fi
+isExistApp = `pgrep httpd`
+if [[ -n  $isExistApp ]]; then
+    service httpd stop        
 fi
