@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .card p {
+            color: #666;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #4CAF50;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Application Dashboard</h1>
+    </header>
+
+    <div class="container">
+        <!-- Server Status Card -->
+        <div class="card">
+            <h2>Server Status</h2>
+            <p>Uptime: <strong id="uptime">Loading...</strong></p>
+            <p>Active Threads: <strong id="threads">Loading...</strong></p>
+        </div>
+
+        <!-- Recent Activity Card -->
+        <div class="card">
+            <h2>Recent Activity</h2>
+            <ul id="activity-list">
+                <li>Loading activity...</li>
+            </ul>
+        </div>
+
+        <!-- Performance Metrics -->
+        <div class="card">
+            <h2>Performance Metrics</h2>
+            <p>Memory Usage: <strong id="memory">Loading...</strong></p>
+            <p>CPU Usage: <strong id="cpu">Loading...</strong></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 My Java Application</p>
+    </footer>
+
+    <script>
+        // Simulating the server-side data
+        document.getElementById('uptime').innerText = '72 hours';
+        document.getElementById('threads').innerText = '15 active threads';
+        document.getElementById('memory').innerText = '512MB / 1GB';
+        document.getElementById('cpu').innerText = '25%';
+
+        // Mock activity list (you can fetch from your server)
+        const activity = [
+            'User logged in',
+            'Scheduled job ran',
+            'Database backed up',
+            'New user registered'
+        ];
+
+        const activityList = document.getElementById('activity-list');
+        activityList.innerHTML = '';
+        activity.forEach(item => {
+            const li = document.createElement('li');
+            li.innerText = item;
+            activityList.appendChild(li);
+        });
+    </script>
+</body>
+</html>
+
