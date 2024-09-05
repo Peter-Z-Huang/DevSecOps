@@ -9,7 +9,7 @@ phases:
       - apt-get install -y maven
   pre_build:
     commands:
-      - echo Logging in to Amazon ECR...
+      - echo Logging in to Amazon E1CR...
       - echo No pre_build commands required
   build:
     commands:
