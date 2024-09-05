@@ -1,84 +1,62 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Elastic Beanstalk</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Fancy Blog</title>
     <style>
-      body {
-        color: #ffffff;
-        font-family: Arial, sans-serif;
-        font-size:14px;
-        -moz-transition-property: text-shadow;
-        -moz-transition-duration: 4s;
-        -webkit-transition-property: text-shadow;
-        -webkit-transition-duration: 4s;
-        text-shadow: none;
-      }
-      body.blurry {
-        -moz-transition-property: text-shadow;
-        -moz-transition-duration: 4s;
-        -webkit-transition-property: text-shadow;
-        -webkit-transition-duration: 4s;
-        text-shadow: #fff 0px 0px 25px;
-      }
-      p {
-        color: #FF9933
-      }
-      a {
-        color: #F0FFFF;
-      }
-      .textColumn, .linksColumn {
-        padding: 2em;
-      }
-      .textColumn {
-        position: absolute;
-        top: 0px;
-        right: 50%;
-        bottom: 0px;
-        left: 0px;
-
-        text-align: right;
-        padding-top: 11em;
-        background-color: #F0FFFF;
-      }
-      .textColumn p {
-        width: 75%;
-        float:right;
-      }
-      .linksColumn {
-        position: absolute;
-        top:0px;
-        right: 0px;
-        bottom: 0px;
-        left: 50%;
-
-        background-color: #5cb3d6;
-      }
-
-      h1 {
-        color: #3A599A;
-        font-size: 500%;
-        font-weight: normal;
-        margin-bottom: 0em;
-      }
-      h2 {
-        font-size: 200%;
-        font-weight: normal;
-        margin-bottom: 0em;
-      }
-      ul {
-        padding-left: 1em;
-        margin: 0px;
-      }
-      li {
-        margin: 1em 0em;
-      }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #3A599A;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            border-radius: 5px;
+        }
+        h1 {
+            margin: 0;
+        }
+        .post {
+            background-color: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .post h2 {
+            color: #3A599A;
+        }
+        .post-meta {
+            font-size: 0.8em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .read-more {
+            display: inline-block;
+            background-color: #3A599A;
+            color: #fff;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+        .read-more:hover {
+            background-color: #2A498A;
+        }
     </style>
   </head>
   <body>
     <div class="textColumn">
       <h1>Congratulations</h1>
       <p>Your first AWS Elastic Beanstalk Corretto application is now running on your own dedicated environment in the AWS Cloud</p>
-      <p>This environment is launched with Elastic Beanstalk Correttttttttttttttttttttttttttttttttto Platform</p>
+      <p>This environment is launched with Elastic Beanstalk Corretto Platform</p>
     </div>
     <div class="linksColumn">
       <h2>What's Next?</h2>

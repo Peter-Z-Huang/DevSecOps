@@ -1,1 +1,23 @@
-build: mvn assembly:assembly -DdescriptorId=jar-with-dependencies
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+    commands:
+      - echo Installing Maven...
+      - apt-get install -y maven
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - echo No pre_build commands required
+  build:
+    commands:
+      - echo Building the JAR file...
+      - mvn clean package
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - target/*.jar

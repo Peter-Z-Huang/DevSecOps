@@ -1,35 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Sample Deployment</title>
-  <style>
-    body {
-      color: #ffffff;
-      background-color: #0188cc;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-    }
-    
-    h1 {
-      font-size: 500%;
-      font-weight: normal;
-      margin-bottom: 0;
-    }
-    
-    h2 {
-      font-size: 200%;
-      font-weight: normal;
-      margin-bottom: 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Fancy Blog</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #3A599A;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            border-radius: 5px;
+        }
+        h1 {
+            margin: 0;
+        }
+        .post {
+            background-color: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .post h2 {
+            color: #3A599A;
+        }
+        .post-meta {
+            font-size: 0.8em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .read-more {
+            display: inline-block;
+            background-color: #3A599A;
+            color: #fff;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+        .read-more:hover {
+            background-color: #2A498A;
+        }
+    </style>
 </head>
 <body>
-  <div align="center">
-    <h1>Congratulations</h1>
-    <h2>This application was deployed using AWS CodeDeploodsadoooKAN-2y.</h2>
-    <p>For next steps, read the <a href="http://aws.amazon.com/documentation/codedeploy">AWS CodeDeploy Documentation</a>.</p>
-  </div>
+    <header>
+        <h1>My Fancy Blog</h1>
+    </header>
+    
+    <main>
+        <article class="post">
+            <h2>Welcome to My New Blog</h2>
+            <div class="post-meta">Posted on May 1, 2023 by Admin</div>
+            <p>Hello and welcome to my new blog! This is where I'll be sharing my thoughts, experiences, and insights on various topics. Stay tuned for more content coming soon!</p>
+            <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="post">
+            <h2>The Joy of Java Programming</h2>
+            <div class="post-meta">Posted on May 5, 2023 by Admin</div>
+            <p>Java has been a cornerstone of software development for decades. In this post, we'll explore why Java remains relevant and exciting in today's fast-paced tech world.</p>
+            <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="post">
+            <h2>Deploying Your First AWS Elastic Beanstalk Application</h2>
+            <div class="post-meta">Posted on May 10, 2023 by Admin</div>
+            <p>AWS Elastic Beanstalk makes it easy to deploy and scale web applications. Learn how to get started with your first Elastic Beanstalk deployment in this step-by-step guide.</p>
+            <a href="#" class="read-more">Read More</a>
+        </article>
+    </main>
 </body>
 </html>
 
