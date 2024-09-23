@@ -10,7 +10,7 @@
   <name>Java Sample App</name>
 
   <properties>
-    <!-- Ensure compatibility with Java 11 -->
+    <!-- Ensure compatibility with Java 111 -->
     <jettyVersion>11.0.15</jettyVersion>
     <mainApplication>org.example.Application</mainApplication>
     <maven.compiler.source>11</maven.compiler.source>
