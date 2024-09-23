@@ -19,6 +19,8 @@ phases:
         echo "OWASP Zap analysis status is completed..."; 
       - high_alerts=$( curl "$OwaspZapURL/JSON/alert/view/alertsSummary/?apikey=$OwaspZapApiKey&baseurl=$ApplicationURL" | jq -r '.alertsSummary.High')
       - medium_alerts=$( curl "$OwaspZapURL/JSON/alert/view/alertsSummary/?apikey=$OwaspZapApiKey&baseurl=$ApplicationURL" | jq -r '.alertsSummary.Meduim')
+      - API_URL="https://automation.atlassian.com/pro/hooks/31be7ba317be6222937d727480d50676da8e91c0?issue=KAN-10"
+      - curl -X POST "$API_URL" -H "Content-Type: application/json" -d "DAST:$medium_alerts"
       - echo "high alerts are $high_alerts"    
   build:
     commands: 
