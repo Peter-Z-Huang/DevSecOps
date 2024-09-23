@@ -1,3 +1,4 @@
 #!/bin/bash
+service httpd start
 # Start the Java application
-nohup java -jar app.jar 
+# nohup java -jar app.jar 
