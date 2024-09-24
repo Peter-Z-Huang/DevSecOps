@@ -18,8 +18,7 @@ phases:
         done
         echo "OWASP Zap analysis status is completed..."; 
       - high_alerts=$( curl "$OwaspZapURL/JSON/alert/view/alertsSummary/?apikey=$OwaspZapApiKey&baseurl=$ApplicationURL" | jq -r '.alertsSummary.High')
-      - medium_alerts=$( curl "$OwaspZapURL/JSON/alert/view/alertsSummary/?apikey=$OwaspZapApiKey&baseurl=$ApplicationURL" | jq -r '.alertsSummary.Meduim')
-      - curl -X POST "https://automation.atlassian.com/pro/hooks/31be7ba317be6222937d727480d50676da8e91c0?issue=KAN-10" -H "Content-Type: application/json" -d "{\"DAST\": $medium_alerts}"
+      - medium_alerts=$( curl "$OwaspZapURL/JSON/alert/view/alertsSummary/?apikey=$OwaspZapApiKey&baseurl=$ApplicationURL" | jq -r '.alertsSummary.Medium')
       - echo "high alerts are $high_alerts"    
   build:
     commands: 
@@ -36,6 +35,7 @@ phases:
         \"report\": . }" zap-scan-results.json > payload.json
         curl -X POST -H "Content-Type: application/json" -d @payload.json http://54.255.243.166:8082/upload
         aws s3 cp payload.json s3://devsecopspwc/payload.json
+        curl -X POST "https://automation.atlassian.com/pro/hooks/31be7ba317be6222937d727480d50676da8e91c0?issue=KAN-10" -H "Content-Type: application/json" -d "{\"DAST\": \"$medium_alerts\"}"
         aws lambda invoke --function-name ImportVulToSecurityHub --payload file://payload.json owaspzap_scan_report.json && echo "LAMBDA_SUCCEDED" || echo "LAMBDA_FAILED";
       - if [ $high_alerts -gt 0 ] || [ $medium_alerts -gt 0 ]; then echo "there are high or medium alerts.. failing the build" && exit 1; else exit 0; fi
 artifacts:
