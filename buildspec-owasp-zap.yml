@@ -36,10 +36,10 @@ phases:
         high_alerts1=$(curl "$OwaspZapURL/JSON/alert/view/alerts/?apikey=$OwaspZapApiKey&baseurl=$ApplicationURL&riskId=3" | jq -r '.alerts[].name')
         medium_alerts1=$(curl "$OwaspZapURL/JSON/alert/view/alerts/?apikey=$OwaspZapApiKey&baseurl=$ApplicationURL&riskId=2" | jq -r '.alerts[].name')
         payload=$(jq -n --arg high "$high_alerts1" --arg medium "$medium_alerts1" '{DAST: {High: $high, Medium: $medium}}')
-        # curl -X POST -H "Content-Type: application/json" -d @payload.json http://54.255.243.166:8082/upload
+        curl -X POST -H "Content-Type: application/json" -d @payload.json http://54.255.243.166:8082/upload
         aws s3 cp payload.json s3://devsecopspwc/payload.json
         curl -X POST "https://automation.atlassian.com/pro/hooks/31be7ba317be6222937d727480d50676da8e91c0?issue=KAN-10" -H "Content-Type: application/json" -d "$payload"
-        # aws lambda invoke --function-name ImportVulToSecurityHub --payload file://payload.json owaspzap_scan_report.json && echo "LAMBDA_SUCCEDED" || echo "LAMBDA_FAILED";
+        aws lambda invoke --function-name ImportVulToSecurityHub --payload file://payload.json owaspzap_scan_report.json && echo "LAMBDA_SUCCEDED" || echo "LAMBDA_FAILED";
       - if [ $high_alerts -gt 0 ] || [ $medium_alerts -gt 0 ]; then echo "there are high or medium alerts.. failing the build" && exit 1; else exit 0; fi
 artifacts:
   type: zip
