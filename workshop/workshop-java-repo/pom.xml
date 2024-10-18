@@ -11,7 +11,7 @@
  
   <properties>
     <!-- You can use a later version if you are are using Java 8 -->
-    <jettyVersion>11.0.15</jettyVersion>
+    <jettyVersion>12.0.12</jettyVersion>
     <mainApplication>org.example.Application</mainApplication>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
